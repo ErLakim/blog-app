@@ -8,16 +8,23 @@ import UseEff from "./pages/UseEff";
 import Demo from "./pages/Demo";
 import Button from "./components/Button";
 import Timer from "./pages/Timer";
-import SearchWithEff from "./pages/SearchWithEff";
-import FilterWithEff from "./pages/FilterWithEff";
+import Cform from "./pages/Cform";
+import Ucform from "./pages/Ucform";
+import Todo from "./pages/Todo";
+import Todos from "./pages/Todos";
+import Account from "./pages/Account";
+import Profile from "./pages/Profile";
+import LS from "./pages/LS";
+// import SearchWithEff from "./pages/SearchWithEff";
+// import FilterWithEff from "./pages/FilterWithEff";
 const App = () => {
   const users=[{name:"ram"},{name:"sita"}];
 return(<><Contact title="Contact Us" description="THis is contact us page."/>
-<Home data={users}/>
-<AboutUs/>
+{/* <Home data={users}/>
+<AboutUs/> */}
 <br/>
-{/* <Timer/>
-<br/>
+ {/* <Timer/> */}
+{/* <br/>
 <Login/>
 <br/>
 <SignUp/> */}
@@ -26,9 +33,20 @@ return(<><Contact title="Contact Us" description="THis is contact us page."/>
 {/* <UseEff/>
 <Demo  />
 <Button/> */}
-<FilterWithEff/>
+{/* <FilterWithEff/> */}
 <br/>
-<SearchWithEff/>
+{/* <SearchWithEff/> */}
+<Todo/>
+<Todos/>
+<br/>
+
+{/* <Cform/>
+<br/>
+<Ucform/> */}
+{/* <Account/>
+<br/>
+<Profile/> */}
+<LS/>
  </>);
 
  };

@@ -1,18 +1,25 @@
-import React from 'react'
-import { useEffect,useState } from 'react';
-import moment  from 'moment';
+import React, { useEffect, useState } from 'react';
+import moment from 'moment';
+import useDebounce from '../hooks/useDebounce';
 
 const Timer = () => {
+  const targetDate = moment(new Date("2024-10-12")).unix();
+  const [time, setTime] = useState(targetDate - moment().unix());
+  const debouncedTime = useDebounce(time, 1000); // Debounce with 1-second delay
 
-    const [count,setCount]=useState(7884000);
-    useEffect(()=>{
-        setTimeout(()=>{
-            setCount(count-1);
-        },1000);
-    });
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(targetDate - moment().unix());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [targetDate]);
+
   return (
-    <div>Timer till DASHAIN {moment().endOf('day').fromNow()}</div>
-  )
-}
+    <div>
+      Timer till DASHAIN {moment.unix(debouncedTime).format("dddd, MMMM Do YYYY, h:mm:ss a")}
+    </div>
+  );
+};
 
-export default Timer
+export default Timer;

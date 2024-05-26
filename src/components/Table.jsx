@@ -1,7 +1,9 @@
 // Table.jsx
 import React from 'react';
 
+
 const Table = ({ headers, data }) => {
+  
   return (
     <table>
       <thead>
